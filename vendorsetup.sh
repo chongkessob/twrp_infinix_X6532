@@ -21,7 +21,7 @@
 # Version and Variant
 export FOX_VERISON="R12.1"
 export FOX_VARIANT="A14"
-export FOX_BUILD_TYPE="64bit"
+export FOX_BUILD_TYPE="Unofficial"
 
 #OTA
 export FOX_AB_DEVICE=1

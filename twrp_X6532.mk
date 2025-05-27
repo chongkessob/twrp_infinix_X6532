@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Device path for OEM device tree
+DEVICE_PATH := device/infinix/X6532
+
 # Inherit from Infinix-X6532 device
 $(call inherit-product, device/infinix/X6532/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)

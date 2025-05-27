@@ -92,6 +92,9 @@ PLATFORM_VERSION := 16.1.0
 # Platform
 TARGET_BOARD_PLATFORM := mt6768
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_NO_RECOVERY := true

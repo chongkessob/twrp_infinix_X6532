@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-LOCAL_PATH := device/infinix/X6532
+LOCAL_PATH := device/infinix/X6531
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -25,6 +25,22 @@ PRODUCT_TARGET_VNDK_VERSION := 31
 PRODUCT_SHIPPING_API_LEVEL := 31
 
 ENABLE_VIRTUAL_AB := true
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    lk \
+    odm \
+    odm_dlkm \
+    product \
+    system \
+    system_ext \
+    vbmeta_system \
+    vbmeta_vendor \
+    vendor \
+    vendor_boot \
+    vendor_dlkm
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -54,7 +70,7 @@ PRODUCT_PACKAGES_DEBUG += \
  
 # Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
 PRODUCT_PACKAGES += \
@@ -82,7 +98,6 @@ PRODUCT_PACKAGES_DEBUG += \
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
     libkeymaster41 \
-    libkeymaster_portable \
     libpuresoftkeymasterdevice \
     libion \
     libxml2
@@ -90,16 +105,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_portable.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
-
-# Recovery libs
-TARGET_RECOVERY_DEVICE_MODULES += \
-    vendor.display.config@1.0 \
-    vendor.display.config@2.0
-
-RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so

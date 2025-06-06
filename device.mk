@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-LOCAL_PATH := device/infinix/X6531
+LOCAL_PATH := device/infinix/X6532
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -31,16 +31,13 @@ AB_OTA_PARTITIONS += \
     boot \
     dtbo \
     lk \
-    odm \
-    odm_dlkm \
     product \
     system \
     system_ext \
     vbmeta_system \
     vbmeta_vendor \
     vendor \
-    vendor_boot \
-    vendor_dlkm
+    vendor_boot
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -70,7 +67,7 @@ PRODUCT_PACKAGES_DEBUG += \
  
 # Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
 PRODUCT_PACKAGES += \

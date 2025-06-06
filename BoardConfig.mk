@@ -29,7 +29,6 @@ ENABLE_SCHEDBOOST := true
 
 TARGET_OTA_ASSERT_DEVICE := Infinix-X6532
 
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mt6768
 TARGET_NO_BOOTLOADER := true
@@ -127,7 +126,6 @@ BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # Vendor Modules
-
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules) $(shell ls $(DEVICE_PATH)/recovery/root/vendor/lib/modules)\")
 
 # Workaround for copy_out error

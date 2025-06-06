@@ -89,12 +89,10 @@ BOARD_MAIN_PARTITION_LIST += \
     system_ext \
     vendor \
 
-BOARD_ODM_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_STSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
-BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6768
@@ -127,7 +125,6 @@ BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # Vendor Modules
-
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules) $(shell ls $(DEVICE_PATH)/recovery/root/vendor/lib/modules)\")
 
 # Workaround for copy_out error
